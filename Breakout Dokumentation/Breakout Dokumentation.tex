@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper,ngerman]{scrartcl}
+\usepackage[ngerman]{babel}
+\title{Breakout Java Dokumentation}
+\author{Lukas Schramm}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=15mm]{geometry}
+\usepackage{graphicx}
+\usepackage{geometry}
+\setlength{\footskip}{0.2cm}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\usepackage{hyperref}
+\usepackage[headsepline,footsepline]{scrpage2}
+\usepackage[german=guillemets]{csquotes} 
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ihead{Lukas Schramm}
+\chead{Breakout Java Dokumentation}
+\ohead{10. Oktober 2015}
+\cfoot{- \thepage \hspace{1pt} - }
+\hypersetup{pdfinfo={
+  Title=Breakout Java Dokumentation,
+  Author=Lukas Schramm,
+  Subject=Java-Dokumentation,
+  Keywords={Java, openHPI, Dokumentation, Breakout}}
+}
+
+\begin{document}
+\section{Einleitung}
+Hallihallöle,
+vielen Dank, dass Du Dir mein Projekt ansiehst! Ich habe das ganze auf eine etwas andere Art gelöst. Ich bin leider nicht so recht mit dieser core.jar-Bibliothek klargekommen. Deshalb habe ich das gesamte Projekt von Grund auf neu zusammengestellt. Es enthält alle Elemente des anderen Ursprungsspiels und macht eigentlich genau das gleiche. Die Grafik ist nur etwas klobiger und der Quelltext etwas schwieriger gestaltet. Meine kleinen Erläuterungen kannst Du hier nachlesen.
+
+\section{Graphischer Aufbau}
+Ich habe mir gedacht ich mache das in altbekannter Atari-Grafik aus den 80ern und baue das Spielfeld einfach mit 81 mal 40 Pixel auf. Das Spiel basiert auf genau dieser Größe und besteht komplett aus \enquote{Pixeln} dieser Art. Sie nehmen je nachdem, was dort ist (Mauer, Paddle, Ball, Leere) eine ganz andere Farbe an. Demzufolge ist der Ball auch ein quadratischer, was der Spielmechanik aber nichts weiter negativ antut. Die Mauern haben drei verschiedene Farben, je nachdem, wie oft sie getroffen wurden. Ganz oben stehen die Punktzahl, die abgelaufene Zeit und die Anzahl der restlichen Bälle.\\
+Wenn das Spiel vorbei ist, wird nachgefragt, ob ein neues Spiel gestartet werden soll. Wenn man \enquote{Nein} anklickt, wird das Programm geschlossen.
+
+\section{Umsetzung der geforderten Inhalte}
+Auch wenn das Programm eine vollständig andere Grundlage hat, erfüllt es \textbf{alles}, was openHPI als Bewertungsgrundlage gefordert hat. Es implementiert alle Spielregeln und ist vollständig spielbar. Als weiteres Extra habe ich die Anzeige der Systemzeit hinzugefügt. Nach jeweils 15 vergangenen Sekunden wird die Geschwindigkeit eines Balls schrittweise erhöht.\\
+Wenn alle Steine vollständig zerstört wurden, dann wird der Spieler auf seinen Sieg hingewiesen und nach einer neuen Partie gefragt.
+
+\section{Auskommentierung des Quellcodes}
+Ich habe sämtliche relevante Stellen des Spiels mit Hinweisen des Java-Docs kommentiert. Ich hoffe es ist Dir möglich, das meiste davon nachvollziehen zu können. Bekannte Dinge wie Konstruktoren oder Getter und Setter, die zumeist das gleiche machen habe ich nicht extra kommentiert. Ich hoffe die Funktionalität ist klar.
+
+\section{Verbesserungsmöglichkeiten}
+Wie auch Ralf und Tom auf openHPI habe ich noch ein paar kleine Probleme in der Kollisionslogik. Wenn der Ball an der Seite auf einen Stein trifft, dann wird dies nicht korrekt erkannt und ein wenig anders behandelt. Das Spiel ist aber trotzdem gut spielbar.\\
+Viel Spaß beim Spielen!
+
+\end{document}
