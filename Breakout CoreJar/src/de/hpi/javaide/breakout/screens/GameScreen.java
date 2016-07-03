@@ -103,7 +103,6 @@ public class GameScreen implements Screen {
 			CollisionLogic.checkCollision(game, currentBall, paddle, wall);
 		}
 		if(timeStarted) {
-			//TODO Einbauen, dass der Ball schneller wird
 			timePast = System.currentTimeMillis()/1000 - startTime + GameConstants.TIME;
 			timer.update(String.valueOf(timePast));
 		}
